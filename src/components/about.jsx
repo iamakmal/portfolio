@@ -17,11 +17,9 @@ function About() {
           justifyContent: "center",
           paddingLeft: "20px",
           paddingRight: "20px",
+          marginTop: "40px",
         }}
       >
-        <Typography variant="h2" align="center" sx={{ marginBottom: "40px" }}>
-          About Me
-        </Typography>
         <Grid container spacing={2}>
           <Grid
             item
@@ -29,7 +27,10 @@ function About() {
             sm={6}
             sx={{
               display: "flex",
+              flexDirection: "column",
               justifyContent: "center",
+              alignItems: "center",
+              gap: "20px",
             }}
           >
             <img
@@ -37,17 +38,32 @@ function About() {
               alt="profile-pic"
               style={{
                 width: "50vw",
-                maxWidth: "500px",
+                maxWidth: "400px",
                 height: "50vw",
-                maxHeight: "500px",
+                maxHeight: "400px",
                 borderRadius: "50%",
                 objectFit: "cover",
               }}
             />
+            <a href={CV} download>
+              <Button
+                variant="contained"
+                color="secondary"
+                size="large"
+                sx={{
+                  padding: "16px",
+                  fontSize: "16px",
+                  borderRadius: 10,
+                }}
+              >
+                Download CV &nbsp;
+                <DownloadIcon />
+              </Button>
+            </a>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <Typography variant="body1" sx={{ fontSize: "24px" }} paragraph>
-              Hi, I'm Akmal 👋
+            <Typography variant="h3" sx={{ fontSize: "36px" }} paragraph>
+              Hey there, I'm Akmal 👋
             </Typography>
             <Typography variant="body1" sx={{ fontSize: "18px" }} paragraph>
               I'm a Software Engineer based in Colombo, Sri Lanka, passionate
@@ -82,22 +98,6 @@ function About() {
               out if you're working on an interesting project, want to discuss
               technology, or just want to connect. I'm always happy to chat!
             </Typography>
-            <a href={CV} download>
-              <Button
-                variant="contained"
-                color="secondary"
-                size="large"
-                sx={{
-                  margin: "50px",
-                  padding: "20px",
-                  fontSize: "20px",
-                  borderRadius: 10,
-                }}
-              >
-                Download CV &nbsp;
-                <DownloadIcon />
-              </Button>
-            </a>
           </Grid>
         </Grid>
       </Box>
