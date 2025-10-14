@@ -19,7 +19,7 @@ const Chip = ({ index, name }) => {
         padding: "4px 12px",
         display: "inline-block",
         margin: "1px",
-        backgroundColor: `${colors[index % colors.length]}33`, // 20% opacity
+        backgroundColor: `${colors[index % colors.length]}33`,
       }}
     >
       <Typography variant="body2">{name}</Typography>
