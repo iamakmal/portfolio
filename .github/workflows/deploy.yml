@@ -33,12 +33,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Debug Environment Variables
-        run: |
-          echo "Service ID is set: ${{ secrets.REACT_APP_EMAILJS_SERVICE_ID != '' }}"
-          echo "Template ID is set: ${{ secrets.REACT_APP_EMAILJS_TEMPLATE_ID != '' }}"
-          echo "Public Key is set: ${{ secrets.REACT_APP_EMAILJS_PUBLIC_KEY != '' }}"
-
       - name: Build project
         run: npm run build
         env:
@@ -53,4 +47,4 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/iamakmal/portfolio.git
-          npm run deploy
+          npx gh-pages -d build
