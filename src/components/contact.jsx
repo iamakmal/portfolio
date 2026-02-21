@@ -72,10 +72,10 @@ function Contact() {
 
     emailjs
       .send(
-        "service_t1k3lbg",
-        "template_pkz9elr",
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         templateParams,
-        "gyOgN_uwaHWczAH-r"
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
       )
       .then(
         function (response) {
@@ -88,7 +88,8 @@ function Contact() {
         },
         function (error) {
           console.log("FAILED...", error);
-        }
+          alert("Email Delivery Failed. Please try again later.");
+        },
       );
   };
 
